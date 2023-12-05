@@ -2,7 +2,7 @@ import {
   deleteNonNumbersFromString,
   mapStringToNumbersArray,
   keepFirstAndLastElement,
-  sumFirstAndLastElements,
+  sumDecimalNumbers,
   sumNumbers
 } from "./day1.ts";
 import { names } from "./names.ts";
@@ -46,7 +46,7 @@ describe("general test", () => {
 
   it("should sum these two elements", () => {
     const arr: [number, number] = [1, 6];
-    const result = sumFirstAndLastElements(arr);
+    const result = sumDecimalNumbers(arr);
     expect(result).toBe(16);
   });
 
@@ -55,7 +55,7 @@ describe("general test", () => {
       const nameWithoutLetters = deleteNonNumbersFromString(name);
       const nameAsArray = mapStringToNumbersArray(nameWithoutLetters);
       const [first, last] = keepFirstAndLastElement(nameAsArray);
-      return sumFirstAndLastElements([first, last]);
+      return sumDecimalNumbers([first, last]);
     });
     const sum = sumNumbers(listOfNumbers);
     expect(sum).toBe(53921);

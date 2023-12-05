@@ -15,7 +15,7 @@ export function keepFirstAndLastElement<T, U>(arr: (T | U)[]): [T | U, T | U] {
   return [first, last];
 }
 
-export function sumFirstAndLastElements(arr: [number, number]): number {
+export function sumDecimalNumbers(arr: [number, number]): number {
   return Number(String(arr[0]) + String(arr[1]));
 }
 
