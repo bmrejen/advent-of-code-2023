@@ -6,7 +6,7 @@ export function mapStringToNumbersArray(str: string): number[] {
   return str.split("").map(deleteNonNumbersFromString).map(Number);
 }
 
-export function keepFirstAndLastElement<T, U>(arr: (T | U)[]): [T | U, T | U] {
+export function keepFirstAndLastElement<T, U = T>(arr: (T | U)[]): [T | U, T | U] {
   if (arr.length === 0) {
     throw new Error("arr is empty");
   }
