@@ -3,7 +3,7 @@ import {
   mapStringToNumbersArray,
   keepFirstAndLastElement,
   sumDecimalNumbers,
-  sumNumbers
+  sumNumbers as sumNumbersArray
 } from "./day1.ts";
 import { names } from "./names.ts";
 
@@ -52,12 +52,13 @@ describe("general test", () => {
 
   it("should iterate on names", () => {
     const listOfNumbers = names.map((name) => {
-      const nameWithoutLetters = deleteNonNumbersFromString(name);
-      const nameAsArray = mapStringToNumbersArray(nameWithoutLetters);
-      const [first, last] = keepFirstAndLastElement(nameAsArray);
-      return sumDecimalNumbers([first, last]);
+      const nameWithoutLetters: string = deleteNonNumbersFromString(name);
+      const nameAsArray: number[] = mapStringToNumbersArray(nameWithoutLetters);
+      const [first, last]: [number, number] = keepFirstAndLastElement(nameAsArray);
+      const decimalSum: number = sumDecimalNumbers([first, last]);
+      return decimalSum;
     });
-    const sum = sumNumbers(listOfNumbers);
-    expect(sum).toBe(53921);
+    const totalSum: number = sumNumbersArray(listOfNumbers);
+    expect(totalSum).toBe(53921);
   });
 });
